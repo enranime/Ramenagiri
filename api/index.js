@@ -1,6 +1,6 @@
 // Require the necessary discord.js classes
 const { Client, Intents, Guild, BaseGuild, AnonymousGuild, Message } = require('discord.js');
-const { token } = require('../config.json');
+const config = require('../config')
 const express = require("express");
 const app = express();
 
@@ -72,7 +72,7 @@ client.on('interactionCreate', async interaction =>
 
 
 // Login to Discord with your client's token
-client.login(token);
+client.login(config.token);
 
 
 module.exports = app;
