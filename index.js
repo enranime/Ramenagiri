@@ -1,5 +1,10 @@
 const app = require('./api/index');
+const config = require('./config');
 
-app.listen(3000, ()=>{
-	console.log("Project is running!");
-});
+const boot = async () => {
+	app.listen(config.port, ()=>{
+		console.log("Project is running!");
+	});
+}
+
+boot();
